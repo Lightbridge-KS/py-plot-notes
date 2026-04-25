@@ -25,6 +25,8 @@ book:
           href: contents/matplotlib/m5-colors-and-colormaps.ipynb
         - text: "Module 6: Multi-Panel Figures"
           href: contents/matplotlib/m6-multi-panel-figures.ipynb
+        - text: "Module 7: Styling and Themes"
+          href: contents/matplotlib/m7-styling-and-themes.ipynb
 
 format:
   html:
