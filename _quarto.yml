@@ -17,6 +17,8 @@ book:
           href: contents/matplotlib/m1-foundation.ipynb
         - text: "Module 2: The Object-Oriented API"
           href: contents/matplotlib/m2-object-oriented-api.ipynb
+        - text: "Module 3: The Plot Vocabulary"
+          href: contents/matplotlib/m3-plot-vocabulary.ipynb
 
 format:
   html:
