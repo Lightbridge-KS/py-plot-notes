@@ -23,6 +23,8 @@ book:
           href: contents/matplotlib/m4-customization.ipynb
         - text: "Module 5: Colors and Colormaps"
           href: contents/matplotlib/m5-colors-and-colormaps.ipynb
+        - text: "Module 6: Multi-Panel Figures"
+          href: contents/matplotlib/m6-multi-panel-figures.ipynb
 
 format:
   html:
