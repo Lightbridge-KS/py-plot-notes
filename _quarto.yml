@@ -27,6 +27,8 @@ book:
           href: contents/matplotlib/m6-multi-panel-figures.ipynb
         - text: "Module 7: Styling and Themes"
           href: contents/matplotlib/m7-styling-and-themes.ipynb
+        - text: "Module 9: Medical Imaging Applications"
+          href: contents/matplotlib/m9-medical-imaging-applications.ipynb
 
 format:
   html:
