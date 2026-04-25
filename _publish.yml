@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: f205d44c-c357-4686-a463-1f83687265c6
+      url: https://py-plot-notes-lightbridge.netlify.app
