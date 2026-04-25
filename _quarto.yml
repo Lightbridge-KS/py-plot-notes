@@ -21,6 +21,8 @@ book:
           href: contents/matplotlib/m3-plot-vocabulary.ipynb
         - text: "Module 4: Customization"
           href: contents/matplotlib/m4-customization.ipynb
+        - text: "Module 5: Colors and Colormaps"
+          href: contents/matplotlib/m5-colors-and-colormaps.ipynb
 
 format:
   html:
