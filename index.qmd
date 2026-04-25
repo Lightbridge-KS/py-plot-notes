@@ -1,0 +1,5 @@
+# Preface {.unnumbered}
+
+::: {.callout-note appearance="default" collapse="false"}
+Notes collection on plotting in Python, including Matplotlib, Seaborn, and related visualization tools.
+:::

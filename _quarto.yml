@@ -1,0 +1,22 @@
+project:
+  type: book
+
+book:
+  title: "Python Plotting Notes"
+  author: "Kittipos Sirivongrungson"
+  date: today
+  repo-url: https://github.com/Lightbridge-KS/py-plot-notes
+  site-url: https://py-plot-notes.netlify.app
+  chapters:
+    - index.qmd
+
+format:
+  html:
+    theme:
+      light:
+      - cosmo
+      dark:
+      - darkly
+    toc-depth: 4
+
+freeze: auto
