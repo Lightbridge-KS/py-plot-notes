@@ -1,0 +1,179 @@
+---
+title: "Matplotlib Learning Outline"
+---
+
+## Mental model shift from ggplot2
+
+Coming from ggplot2 provides a strong foundation, but the biggest adjustment is the mental model rather than the syntax.
+
+```text
+ggplot2 (declarative)              matplotlib (imperative / object-oriented)
+─────────────────────────          ─────────────────────────────────────────
+ggplot(data, aes(...))             fig, ax = plt.subplots()
++ geom_point()                     ax.scatter(x, y)
++ geom_smooth()                    ax.plot(x, y_smooth)
++ labs(...)                        ax.set_xlabel(...); ax.set_title(...)
++ theme_minimal()                  plt.style.use("seaborn-v0_8")
+
+"Describe the plot,                  "Create a canvas, then call
+ then let the grammar                  methods on it to draw things."
+ render it."
+```
+
+In ggplot2, plots are composed by adding declarative layers with `+`.
+
+In matplotlib, plots are usually built by creating and mutating `Figure` and `Axes` objects. Once that object-oriented workflow clicks, the rest is mostly learning the vocabulary of plotting methods and configuration options.
+
+## Proposed curriculum
+
+### Module 1 — Foundations and mental model
+
+Learn the anatomy of a matplotlib figure:
+
+- `Figure`
+- `Axes`
+- `Artist`
+
+Understand the two main APIs:
+
+- the `pyplot` state-machine API
+- the object-oriented API
+
+The object-oriented API should be the default for most serious work. Also cover setup in VS Code and Jupyter, including the difference between inline and interactive backends.
+
+### Module 2 — The object-oriented API: core fluency
+
+Build fluency with the core workflow:
+
+```python
+fig, ax = plt.subplots()
+```
+
+Focus on common `ax.*` methods:
+
+- `ax.plot()`
+- `ax.scatter()`
+- `ax.bar()`
+- `ax.hist()`
+- `ax.errorbar()`
+
+Also practice passing data as NumPy arrays and pandas `Series` objects.
+
+This module is the closest matplotlib equivalent of learning `aes()` and `geom_*()` in ggplot2.
+
+### Module 3 — The plot vocabulary
+
+Learn the common chart families:
+
+- line plots
+- scatter plots
+- bar plots
+- histograms
+- boxplots
+- violin plots
+- stacked and grouped bars
+
+Also cover the 2D plotting family that matters for imaging and scientific work:
+
+- `imshow()`
+- `contour()`
+- `contourf()`
+- `pcolormesh()`
+
+### Module 4 — Customization
+
+Practice the main customization tools:
+
+- titles
+- axis labels
+- legends
+- tick formatting
+- axis limits
+- linear and log scales
+- annotations with `ax.annotate()` and `ax.text()`
+- spines
+
+This is where much of the knowledge from `theme()` and `scale_*()` in ggplot2 transfers over.
+
+### Module 5 — Colors and colormaps
+
+Start with basic color specification:
+
+- named colors
+- color cycles
+- hex colors
+
+Then study colormaps:
+
+- sequential
+- diverging
+- qualitative
+
+For medical imaging overlays, pay particular attention to diverging maps, `vmin`, `vmax`, and normalization with `norm`.
+
+### Module 6 — Multi-panel figures
+
+Learn the main layout tools:
+
+- `plt.subplots(nrows, ncols)`
+- `subplot_mosaic()`
+- `GridSpec`
+- shared axes
+
+`subplot_mosaic()` is often the modern favorite for readable custom layouts.
+
+These tools are related to `facet_wrap()` and `facet_grid()` in ggplot2, though matplotlib is usually less automatic and more explicit.
+
+### Module 7 — Styling and themes
+
+Learn how matplotlib handles global and reusable style:
+
+- `rcParams`
+- style sheets
+- `plt.style.use()`
+- reusable style files
+
+This is the closest matplotlib equivalent to `theme_*()` functions in ggplot2.
+
+A useful practical goal is to create a reusable style file for Radiology AI Unit figures and publications.
+
+### Module 8 — Integration with the Python visualization ecosystem
+
+Understand how matplotlib sits underneath many higher-level tools:
+
+- `DataFrame.plot()` from pandas
+- seaborn as a higher-level statistical visualization layer
+- when to stay in seaborn
+- when to drop down to raw matplotlib for detailed control
+
+### Module 9 — Medical imaging applications
+
+Apply matplotlib to radiology and medical imaging tasks:
+
+- displaying DICOM slices with `imshow()`
+- windowing images with `vmin` and `vmax`
+- overlaying segmentation masks with alpha blending
+- drawing ROI contours
+- creating side-by-side comparison layouts for radiology figures
+
+### Module 10 — Saving and publication
+
+Learn publication-oriented output:
+
+- `savefig()`
+- DPI
+- vector formats such as SVG and PDF
+- raster formats such as PNG
+- figure sizing in inches for journal submissions
+- tight layouts
+- embedding figures in Quarto documents
+
+## Suggested learning rhythm
+
+```text
+Week 1 │ Modules 1–2  │ Build fluency in the OO API: the grammar
+Week 2 │ Modules 3–4  │ Plot types and customization
+Week 3 │ Modules 5–6  │ Color and multi-panel layouts
+Week 4 │ Modules 7–8  │ Styling and pandas/seaborn integration
+Week 5 │ Modules 9–10 │ Radiology-specific figures and publication output
+```

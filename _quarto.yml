@@ -9,6 +9,9 @@ book:
   site-url: https://py-plot-notes.netlify.app
   chapters:
     - index.qmd
+    - part: "Matplotlib"
+      chapters:
+        - contents/matplotlib/outline-matplotlib.qmd
 
 format:
   html:
